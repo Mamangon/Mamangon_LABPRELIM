@@ -1,0 +1,129 @@
+import, React, { useState } from 'react';
+import { SafeAreaView, ScrollView, View, Text, Image, TouchableOpacity, StyleSheet}; from 'react-native';
+
+const App = () => {
+  const [currentSection, setCurrentSection] = useState('name'),
+
+  const resumeData = {  
+  imageUrl: require('')
+  name: 'Tristan T. Mamangon',
+  course: 'Bachelor Of Science in Information Technology',
+  education: {
+    elementary: 'Barrio Obrero Elementary School',
+    elementaryYear: '2006',
+    highSchool: 'Felipe Calderon National High School',
+    highSchoolYear: '2012',
+    seniorhighSchool: 'Philippine College of Health and Sciences',
+    seniorhighYear: '2017',
+    college: 'Global Reciprocal College',
+    collegeYear: '2019',
+  },
+  about.'Im a ' am a passionate and dedicated IT student with a keen interest in exploring the ever-evolving world of technology. Currently pursuing my       course Information Technology in Graphic Designer, I am driven by a desire to contribute to innovative solutions and make a meaningful impact in the digital realm.
+   onlinegamesthatiplayed:
+  {
+     gamename: blackclovermobile
+     imageSrc: './BlackClover.jpg',
+     description: is a licensed rpg based on the popular anime series from "Shonen Jump" (Shueisha) and TV Tokyo. Immerse yourself in a magical fantasy world, experience classic original storylines while enjoying an easy to play strategy turn-based gameplay.
+     contact: 
+  }
+  
+   contact: {
+     number: 09159800870
+     email:tristanmamangon@gmail.com 
+   },
+   const handlePress = () => {
+     setCurrentSection((prevSection) => {
+       switch (prevSection) {
+         case 'name';
+          return 'education';
+         case 'education':
+          return 'about';
+         case 'about';
+          return 'projects'; //move to the 'projects' section
+         case 'projects';
+          return 'projects1' // Move to 'projects1'
+              case 'projects1';
+            return 'contact' ; // Move to the 'contact' section
+          case 'contact' ; 
+          return 'name'; // loop Back to the start
+          default; 
+          return 'name';
+       }
+     }
+   }    
+   }
+}
+          return (
+            <SafeAreaView style ={{ flex: 1}}>
+            <ScrollView contentContainersStyle= {styles.container}>
+            <TouchableOpacity onPress={handlePress} style={styles.contentContainer}>
+            {currentSection === 'name' && (
+              <>
+              <Image source = {resumeData. imageUrl} style {styles.image}>
+              <View style={styles.textContainer}>
+              <Text style={styles.header}>{resumeData}>
+              <Text style= {styles.projectDescription}> {resumeData.projects.description}>
+            </View>
+            )}
+
+            {currentSection === 'projects' && (
+              <View style={styles.projectsContainer}>
+                <Text style.{styles.header1}>Projects:</Text>
+              <Text style={styles.projectTitle}>{resumeData.projects1.projectName1}</Text>
+              <Image source={{ uri:resumeData.projects1.imageSrc1 }} style={styles.projectsImage} />
+              <Text style={styles.projectLink}>{resumeData.projects1.link1}</Text>
+              <Text style={styles.projectDescription}>{resumeData.projects1.desrcription}</Text>
+            </View>
+            )}
+
+            {currentSection === 'contact' && (
+              </View style={styles.contactContainer}>
+                <Text style={styles.header1}>Contact Me:{'\n'}</Text>
+                <Text style={styles.info1}>
+                {'\n'}Mobile: {resumeData.contact.mobile}
+                {'\n'}Email: {resumeData.contact.email}
+              </Text>
+             </View>
+            )}
+
+          </TouchableOpacity>
+        </ScrollView>
+      </SafeAreaView>
+          );
+        };
+        
+        const styles = StyleSheet.create({
+        container: {
+          flexGrow: 1,
+          justifyContent: 'center',
+          alignItems: 'center',
+          padding: 20,
+        },
+        contentContainer: {
+          alignItems: 'center',
+          maxWidth: 600,
+        },
+        image {
+
+          
+        }
+        }
+        )
+
+
+
+
+
+
+
+
+
+
+
+
+
+            )
+            )
+            
+          )
+export default Apps;
